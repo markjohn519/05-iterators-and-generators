@@ -1,21 +1,19 @@
-function createIterable(num) {
+function createIterable(n) {
   let start = 0
   let step = 1
   let value = start
+  let num = n
 
   return {
     [Symbol.iterator]() {
       return {
         next() {
-          let result
-          // eslint-disable-next-line no-unreachable-loop
-          while (num > 0) {
+          if (num > 0) {
             value += start
             start = step
             step = value
             num -= 1
-            result = { value, done: false }
-            return result
+            return { value, done: false }
           }
           return { value, done: true }
         },
@@ -24,8 +22,6 @@ function createIterable(num) {
   }
 }
 
-const iterable = createIterable(10)
+const iterable2 = createIterable(10)
 
-for (const number of iterable) {
-  console.log(number)
-}
+console.log([...iterable2])
