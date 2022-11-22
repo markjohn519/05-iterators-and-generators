@@ -1,18 +1,18 @@
 function createIterable(n) {
-  let start = 0
-  let step = 1
-  let value = start
-  let num = n
+  let num1 = 0
+  let num2 = 1
+  let value = num1
+  let length = n
 
   return {
     [Symbol.iterator]() {
       return {
         next() {
-          if (num > 0) {
-            value += start
-            start = step
-            step = value
-            num -= 1
+          if (length > 0) {
+            value += num1
+            num1 = num2
+            num2 = value
+            length -= 1
             return { value, done: false }
           }
           return { value, done: true }
