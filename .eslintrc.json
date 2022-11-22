@@ -13,12 +13,6 @@
     "rules": {
         "no-console": "off",
         "semi": ["error", "never"],
-        "import/extensions": ["error", "ignorePackages"],
-        "no-use-before-define": ["off", {
-            "functions": true,
-            "classes": true,
-            "variables": true,
-            "allowNamedExports": false
-        }]
+        "import/extensions": ["error", "ignorePackages"]
     }
 }
